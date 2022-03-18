@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {Toggler} from 'Components/Toggler';
-import {DebouncedPicker} from 'Components/DebouncedPicker';
+import {Toggler} from 'components/Toggler';
+import {DebouncedPicker} from 'components/DebouncedPicker';
 
 const ControlPanel = () => {
   const [check, setCheck] = useState(false);
