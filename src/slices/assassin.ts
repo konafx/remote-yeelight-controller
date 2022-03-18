@@ -28,7 +28,7 @@ export const assassinSlice = createSlice({
 export const { activate, deactivate } = assassinSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectActivenessAssassin = (state: RootState) => state.assassin.value
+// export const selectActivenessAssassin = (state: RootState) => state.assassin.value
 
 export default assassinSlice.reducer;
 
