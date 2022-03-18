@@ -1,1 +1,1 @@
-export { getHtmlId } from './random'
+export {getHtmlId} from './random'
