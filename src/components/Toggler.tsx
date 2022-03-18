@@ -3,9 +3,10 @@ import { getHtmlId } from 'utils';
 import 'bulma-switch/dist/css/bulma-switch.min.css';
 
 type Props = {
-  label: string;
   check: boolean;
   onChange: (check: boolean) => void;
+  label: string;
+  disabled?: boolean;
 }
 
 export const Toggler = (props: Props) => {
@@ -17,8 +18,9 @@ export const Toggler = (props: Props) => {
 
   return (
     <div className="field">
-      <input id={id} type="checkbox" className="switch control"
+      <input id={id} type="checkbox" className="switch"
         onChange={handle} checked={props.check}
+        disabled={props.disabled}
       />
       <label htmlFor={id}>{props.label}</label>
     </div>
