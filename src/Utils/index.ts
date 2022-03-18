@@ -1,0 +1,1 @@
+export { getHtmlId } from './random'
