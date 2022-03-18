@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getHtmlId } from 'Utils';
+import { getHtmlId } from 'utils';
 import 'bulma-switch/dist/css/bulma-switch.min.css';
 
 type Props = {

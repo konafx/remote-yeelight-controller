@@ -1,5 +1,5 @@
 import './App.css';
-import ControlPanel from './Pages/ControlPanel';
+import ControlPanel from 'pages/ControlPanel';
 import 'bulma/css/bulma.min.css';
 
 function App() {

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {HexColorPicker} from "react-colorful";
-import {useDebounce} from '../Hooks';
+import {useDebounce} from 'hooks';
 
 // TODO: color type define
 type Props = {
