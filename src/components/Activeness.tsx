@@ -1,22 +1,30 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "hooks";
-import { getHtmlId } from "utils";
 import {Toggler} from "./Toggler";
 import { activate, deactivate } from "slices/assassin";
 
 export const Activeness = () => {
   const activeness = useAppSelector((state) => state.assassin.value);
-  const [label, setLabel] = useState('Active')
-  useEffect(() => setLabel(activeness ? 'Active' : 'Deactive'), [activeness])
 
   const dispatch = useAppDispatch();
+
+  const timeMax = 10;
+  const timeMin = 2;
   useEffect(() => {
     // TODO: dev 
+    const time = Math.floor(Math.random() * (timeMax-timeMin) + timeMin);
+    console.debug(`activeness [${time}] toggler start!`)
     setTimeout(() => {
       dispatch(activeness ? deactivate() : activate())
-    }, 5*1000);
+      console.debug(`STOP activeness [${time}] toggler`);
+    }, time*1000);
   }, [activeness, dispatch]);
 
-  return <Toggler check={activeness} onChange={()=>function(){}} label={label} disabled />;
+  return <Toggler
+    check={activeness}
+    onChange={()=>function(){}}
+    label={activeness ? 'Active' : 'Deactive'}
+    disabled
+    />;
 };
 
