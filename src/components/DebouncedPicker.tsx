@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import {HexColorPicker} from "react-colorful";
-import {useDebounce} from 'hooks';
+import React, { useState } from 'react';
+import { HexColorPicker } from 'react-colorful';
+import { useDebounce } from 'hooks';
 
 // TODO: color type define
 type Props = {
   color: string;
   onChange: (color: string) => void;
   time?: number;
-}
+};
 
-export const DebouncedPicker = (props: Props) => {
+export const DebouncedPicker = (props: Omit<React.HTMLAttributes<HTMLInputElement>, 'onChange'> & Props) => {
   const [color, setColor] = useState(props.color);
 
   const debounce = useDebounce(props.time ?? 200);
@@ -18,5 +18,5 @@ export const DebouncedPicker = (props: Props) => {
     debounce(() => props.onChange(newColor));
   };
 
-  return <HexColorPicker color={color} onChange={handleChange} />;
+  return <HexColorPicker {...props} onChange={handleChange} color={color} />;
 };
