@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Toggler } from 'components/Toggler';
 import { DebouncedPicker } from 'components/DebouncedPicker';
 import { Activeness } from 'components/Activeness';
