@@ -17,6 +17,5 @@ export const DebouncedPicker = (props: Omit<React.HTMLAttributes<HTMLInputElemen
     setColor(newColor);
     debounce(() => props.onChange(newColor));
   };
-
   return <HexColorPicker {...props} onChange={handleChange} color={color} />;
 };
