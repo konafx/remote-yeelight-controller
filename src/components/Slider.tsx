@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bulma-slider/dist/css/bulma-slider.min.css';
 
 type Props = {
