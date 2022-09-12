@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Toggler } from 'components/Toggler';
 import { DebouncedPicker } from 'components/DebouncedPicker';
 import { Activeness } from 'components/Activeness';
 import { Slider } from 'components/Slider';
-import { Tooltip } from 'components/Tooltip';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
 const ControlPanel = () => {
   const [check, setCheck] = useState(false);
@@ -36,8 +36,8 @@ const ControlPanel = () => {
 
           <div className="columns is-mobile is-vcentered">
             <div className="column is-one-fifth has-text-right">
-              <button className="button" onClick={() => handleBrightness(brightness - 1)}>
-                {min}
+              <button className="button is-small" onClick={() => handleBrightness(brightness - 1)}>
+                <FaAngleLeft />
               </button>
             </div>
             <div className="column">
@@ -45,12 +45,11 @@ const ControlPanel = () => {
             </div>
             <div className="column is-one-fifth has-text-left">
               <button className="button" onClick={() => handleBrightness(brightness + 1)}>
-                {max}
+                <FaAngleRight />
               </button>
             </div>
           </div>
         </div>
-        <Tooltip tooltipBox={`${brightness}`} value={brightness} onChange={handleBrightness} max={max} min={min} />
       </div>
     </section>
   );
